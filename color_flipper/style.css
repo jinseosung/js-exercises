@@ -1,0 +1,61 @@
+:root {
+  --color-primary-500: #a688fa;
+  --color-surface-100: #121212;
+
+  --font-size-xl: 1.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  color: inherit;
+  font-family: "Poppins", sans-serif;
+  background-color: #C2B078;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background-color: var(--color-surface-100);
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--color-surface-100);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  letter-spacing: 0.2rem;
+}
+
+.btn:hover {
+  background-color: var(--color-surface-100);
+  color: white;
+}
