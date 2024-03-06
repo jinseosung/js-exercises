@@ -1,0 +1,60 @@
+:root {
+  --color-primary-500: #a688fa;
+  --color-surface-200: #282828;
+  --color-surface-100: #121212;
+
+  --font-size-xl: 1.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-surface-200);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title {
+  color: var(--color-primary-500);
+  font-size: 3rem;
+}
+
+.number {
+  color: var(--color-primary-500);
+  font-size: 4rem;
+}
+
+.btns {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn {
+  border: 2px solid var(--color-primary-500);
+  background-color: transparent;
+  color: var(--color-primary-500);
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-500);
+  color: var(--color-surface-100);
+}
