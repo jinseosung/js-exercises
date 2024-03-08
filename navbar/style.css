@@ -1,0 +1,138 @@
+:root {
+  --color-primary-500: #a688fa;
+  --color-primary-200: #5e43f3;
+  --color-surface-200: #282828;
+  --color-surface-100: #121212;
+  --color-white: #f5f5f5;
+
+  --font-size-xl: 1.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:link,
+a:visited {
+  color: inherit;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s linear;
+}
+
+.container {
+  font-size: 1.5rem;
+}
+
+.container > span {
+  display: none;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--color-primary-200);
+}
+
+.socials-links {
+  display: flex;
+  gap: 1.2rem;
+  font-size: var(--font-size-xl);
+}
+
+.socials-links a {
+  color: var(--color-primary-200);
+  transition: all 0.2s linear;
+}
+
+.socials-links a:hover {
+  color: var(--color-primary-500);
+}
+
+@media screen and (max-width: 799px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container > span {
+    display: block;
+    transition: transform 0.2s linear;
+  }
+
+  .container > span:hover {
+    transform: rotate(90deg);
+    color: var(--color-primary-200);
+  }
+
+  .links {
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    transition: all 0.3s linear;
+  }
+
+  .link {
+    padding: 1rem;
+    transition: all 0.2s linear;
+  }
+
+  .link:hover {
+    margin-left: 0.3rem;
+    background-color: var(--color-primary-500);
+  }
+
+  .socials-links {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+  }
+
+  .links.active {
+    margin: 1rem 0;
+    height: 14rem;
+  }
+  .socials-links.active {
+    height: 2rem;
+  }
+}
