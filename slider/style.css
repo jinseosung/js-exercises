@@ -1,0 +1,91 @@
+:root {
+  --color-primary-500: #a688fa;
+  --color-primary-200: #5e43f3;
+  --color-surface-200: #282828;
+  --color-surface-100: #121212;
+  --color-white: #f5f5f5;
+
+  --font-size-xl: 1.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  height: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 700px;
+  width: 60vw;
+  max-height: 500px;
+  height: 60vh;
+  border: 6px solid var(--color-primary-200);
+  position: relative;
+}
+
+.sliders {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.sliders::-webkit-scrollbar {
+  display: none;
+}
+
+.slider {
+  flex: 0 0 auto;
+  width: 100%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.slider:nth-child(even) {
+  background-color: pink;
+}
+
+.slider:nth-child(odd) {
+  background-color: skyblue;
+}
+
+.btn {
+  position: absolute;
+  top: calc(50% - 2.5rem / 2);
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn-left {
+  left: -40px;
+}
+
+.btn-right {
+  right: -40px;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  color: var(--color-primary-200);
+}
