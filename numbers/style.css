@@ -1,0 +1,176 @@
+:root {
+  --color-primary-500: #a688fa;
+  --color-primary-200: #5e43f3;
+  --color-surface-200: #282828;
+  --color-surface-100: #121212;
+  --color-white: #f5f5f5;
+  --color-gray: #f1f5f8;
+
+  --font-size-xl: 1.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-gray);
+}
+
+.numbers {
+  width: 85vw;
+  margin: 0 auto;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.number {
+  width: 32%;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  overflow: hidden;
+}
+
+.number::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.number:first-child::after {
+  background-color: #f59e0b;
+}
+
+.number:nth-child(2)::after {
+  background-color: #14b8a6;
+}
+
+.number:last-child::after {
+  background-color: #a855f7;
+}
+
+.number__title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 500;
+  inherits: false;
+}
+
+.number:first-child .number__title::after {
+  content: counter(num) "+";
+}
+
+.number:first-child .number__title {
+  animation: counter 3s ease-in-out;
+  counter-reset: num var(--num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 500;
+  }
+}
+
+@property --num2 {
+  syntax: "<integer>";
+  initial-value: 17140;
+  inherits: false;
+}
+
+.number:nth-child(2) .number__title::after {
+  content: counter(num2) "+";
+}
+
+.number:nth-child(2) .number__title {
+  animation: counter2 5s ease-in-out;
+  counter-reset: num2 var(--num2);
+}
+
+@keyframes counter2 {
+  from {
+    --num2: 0;
+  }
+  to {
+    --num2: 17140;
+  }
+}
+
+@property --num3 {
+  syntax: "<integer>";
+  initial-value: 1500;
+  inherits: false;
+}
+
+.number:last-child .number__title::after {
+  content: counter(num3) "+";
+}
+
+.number:last-child .number__title {
+  animation: counter3 4s ease-in-out;
+  counter-reset: num3 var(--num3);
+}
+
+@keyframes counter3 {
+  from {
+    --num3: 0;
+  }
+  to {
+    --num3: 1500;
+  }
+}
+
+.number__description {
+  font-size: 1.4rem;
+}
+
+.container {
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 2rem;
+  width: 40vw;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  border-radius: 5px;
+}
+
+.container__description {
+  position: relative;
+}
+
+.container__description::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary-200);
+  transition: all 0.3s linear;
+}
+
+.container:hover .container__description::after {
+  width: 65%;
+}
