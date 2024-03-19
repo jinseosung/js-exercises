@@ -7,6 +7,17 @@ const filterInput = document.querySelector(".filter__form input");
 
 let allProducts = [];
 
+const fetchCategories = async () => {
+  try {
+    const response = await fetch(
+      "https://fakestoreapi.com/products/categories"
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const fetchProducts = async () => {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -17,13 +28,13 @@ const fetchProducts = async () => {
 };
 
 const initializeApp = async () => {
+  const categories = await fetchCategories();
   allProducts = await fetchProducts();
-  displayCategory(allProducts);
+  displayCategory(categories);
   displayProducts(allProducts);
 };
 
-const displayCategory = (products) => {
-  const categories = [...new Set(products.map((product) => product.category))];
+const displayCategory = (categories) => {
   categories.forEach((category) => {
     const li = document.createElement("li");
     li.classList.add("filter__list");
